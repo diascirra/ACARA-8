@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Form Input</h2>
+
+    <form action="input.php" onsubmit="return validateForm(event)" method="post">
+        <label for="kecamatan">Kecamatan:</label><br>
+        <input type="text" id="kecamatan" name="kecamatan" required placeholder="Masukkan nama kecamatan"><br>
+
+        <label for="luas">Luas (ha):</label><br>
+        <input type="number" id="luas" name="luas" required placeholder="Masukkan luas wilayah"><br>
+
+        <label for="jumlah_penduduk">Jumlah Penduduk:</label><br>
+        <input type="number" id="jumlah_penduduk" name="jumlah_penduduk" required
+            placeholder="Masukkan jumlah penduduk"><br>
+
+        <label for="latitude">Latitude:</label><br>
+        <input type="number" step="any" id="latitude" name="latitude" required placeholder="Masukkan latitude"><br>
+
+        <label for="longitude">Longitude:</label><br>
+        <input type="number" step="any" id="longitude" name="longitude" required
+            placeholder="Masukkan longitude"><br><br>
+
+        
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="informasi" style="color: red;"></p>
+
+    <script>
+        function validateForm(event) {
+            let luas = document.getElementById("luas").value;
+            let text = "";
+            if (isNaN(luas) || luas < 1) {
+                text = "Data luas harus angka dan tidak boleh bernilai negatif.";
+                document.getElementById("informasi").innerHTML = text;
+                event.preventDefault();  // Mencegah pengiriman form jika ada error
+                return false;  // Mengembalikan nilai false jika validasi gagal
+            }
+            return true;  // Lanjutkan pengiriman form jika validasi berhasil
+        }
+    </script>
+</body>
+
+</html>
