@@ -6,23 +6,19 @@
 
     <form action="input.php" onsubmit="return validateForm(event)" method="post">
         <label for="kecamatan">Kecamatan:</label><br>
-        <input type="text" id="kecamatan" name="kecamatan" required placeholder="Masukkan nama kecamatan"><br>
+        <input type="text" id="kecamatan" name="kecamatan"><br>
 
         <label for="luas">Luas (ha):</label><br>
-        <input type="number" id="luas" name="luas" required placeholder="Masukkan luas wilayah"><br>
+        <input type="number" id="luas" name="luas"><br>
 
         <label for="jumlah_penduduk">Jumlah Penduduk:</label><br>
-        <input type="number" id="jumlah_penduduk" name="jumlah_penduduk" required
-            placeholder="Masukkan jumlah penduduk"><br>
+        <input type="number" id="jumlah_penduduk" name="jumlah_penduduk"><br>
 
         <label for="latitude">Latitude:</label><br>
-        <input type="number" step="any" id="latitude" name="latitude" required placeholder="Masukkan latitude"><br>
+        <input type="number" step="any" id="latitude" name="latitude"><br>
 
         <label for="longitude">Longitude:</label><br>
-        <input type="number" step="any" id="longitude" name="longitude" required
-            placeholder="Masukkan longitude"><br><br>
-
-        
+        <input type="number" step="any" id="longitude" name="longitude"><br><br>
 
         <input type="submit" value="Submit">
     </form>

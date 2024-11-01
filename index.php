@@ -1,80 +1,77 @@
-<!DOCTYPE html>
-<html>
-
 <head>
     <style>
-        body {
-            font-family: 'Verdana', sans-serif; /* Mengganti font untuk tampilan yang lebih modern */
-            background-color: #f9f9f9; /* Latar belakang halaman yang lembut */
-            color: #333; /* Warna teks dasar */
-            margin: 0; /* Menghilangkan margin default */
-            padding: 20px; /* Menambahkan padding pada body */
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
         }
 
         table {
             border-collapse: collapse;
-            width: 90%; /* Mengubah lebar tabel untuk memberikan ruang lebih */
+            width: 80%;
             margin: 20px auto;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada tabel */
-            border-radius: 8px; /* Membulatkan sudut tabel */
-            overflow: hidden; /* Menghilangkan overflow */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th,
         td {
-            border: 1px solid #ddd; /* Mengubah warna border */
-            padding: 15px; /* Menambahkan padding */
+            padding: 12px;
+            border: 1px solid #ddd;
             text-align: left;
         }
 
         th {
-            background-color: #4CAF50; /* Mengganti warna latar belakang header tabel */
-            color: white; /* Warna teks header */
-            font-weight: bold; /* Mengatur teks menjadi tebal */
+            background-color: #a1d4e5;
+            color: white;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2; /* Warna latar belakang baris genap */
-        }
-
-        tr:hover {
-            background-color: #e0f7fa; /* Mengubah warna saat hover */
+            background-color: #f2f2f2;
         }
 
         h2 {
             text-align: center;
-            color: #4CAF50; /* Mengganti warna judul */
-            margin-bottom: 20px; /* Menambahkan margin bawah */
+            color: #0d1419; 
+            margin-bottom: 20px; 
+            font-size: 18px; 
         }
 
         .delete-btn {
-            background-color: #f44336; /* Warna tombol delete */
+            background-color: #f44336; 
             color: white;
-            padding: 8px 15px; /* Menambah padding */
+            padding: 5px 10px; 
+            font-size: 12px; 
             text-decoration: none;
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Animasi transisi */
+            transition: background-color 0.3s ease; 
         }
 
         .delete-btn:hover {
-            background-color: #e53935; /* Warna tombol saat hover */
-        }
+            background-color: #e53935; 
+        } /* Menambahkan kurung tutup di sini */
 
         .add-btn {
             display: inline-block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #2196F3; /* Warna tombol tambah */
+            margin: 15px auto;
+            padding: 8px 15px;
+            background-color: #2196F3; 
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 12px;
             transition: background-color 0.3s ease; /* Animasi transisi */
         }
 
         .add-btn:hover {
-            background-color: #1976D2; /* Warna tombol tambah saat hover */
+            background-color: #1976D2; 
         }
     </style>
 </head>
@@ -130,7 +127,8 @@
                 htmlspecialchars($row["latitude"]) . "</td><td>" .
                 htmlspecialchars($row["luas"]) . "</td><td>" .
                 htmlspecialchars($row["jumlah_penduduk"]) . "</td>
-                <td><a class='delete-btn' href='index.php?delete_id=" . $row["id"] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Delete</a></td></tr>";
+                <td><a class='delete-btn' href='index.php?delete_id=" . $row["id"] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Delete</a></td>
+                <td><a class='add-btn' href='input.php?id=" . $row["id"] . "'>Update</a></td></tr>";  // Menambahkan link Update
         }
         echo "</table>";
     } else {
@@ -140,10 +138,6 @@
     $conn->close();
     ?>
 
-    <br>
-    <div style="text-align:center;">
-        <a href="input.php">Tambah Data</a>
-    </div>
 
 </body>
 
